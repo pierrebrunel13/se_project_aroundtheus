@@ -1,13 +1,113 @@
+@import url(../vendor/fonts.css);
+
 .pages {
   background-color: black;
   color: white;
 }
 
+.page__section {
+  max-width: 880px;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+
 .pages__content {
-  margin-left: 200px;
-  margin-right: 200px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .header {
   margin-top: 45px;
+  max-width: 880px;
+}
+
+.profile {
+  display: flex;
+  padding-top: 40px;
+}
+
+.profile__info {
+  display: grid;
+  grid-template-areas: "title button " "description description";
+  grid-template-columns: minmax(auto, 373px) auto;
+}
+
+.profile__edit-button {
+  background: transparent url(../images/Edit\ Button.svg) center no-repeat;
+  width: 24px;
+  height: 24px;
+  border: 1px;
+  grid-area: button;
+}
+
+.profile__add-button {
+  background: transparent url(../images/Add\ Button.svg) center no-repeat;
+  width: 150px;
+  height: 50px;
+  margin-left: auto;
+}
+
+.profile__title {
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 48px;
+  grid-area: title;
+  margin: 0;
+}
+
+.profile__description {
+  font-size: 18px;
+  line-height: 21.78px;
+  font-weight: 400;
+  color: #ffffff;
+  grid-area: description;
+  margin: 0;
+}
+
+.profile__image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-position: center;
+  margin-right: 24px;
+}
+
+.cards {
+  /* fonts */
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.card__list {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 282px);
+  grid-gap: 17px 20px;
+}
+
+.card__image {
+  width: 282px;
+  height: 282px;
+}
+
+.card__description {
+  display: flex;
+  background-color: #ffffff;
+  color: #000;
+  padding: 25px 20px 20px 25px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card__like-button {
+  background: transparent url(../images/unlike\ button.svg) center no-repeat;
+  width: 21px;
+  height: 18px;
 }
