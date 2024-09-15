@@ -5,7 +5,7 @@
 @import url(../blocks/header.css);
 @media screen and (max-width: 480px) {
   .profile {
-    background-color: pink;
+    background-color: black;
     flex-direction: column;
   }
 
