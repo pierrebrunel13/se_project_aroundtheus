@@ -27,14 +27,23 @@
 .card__description {
   display: flex;
   background-color: #ffffff;
-  color: #000;
-  padding: 25px 20px 20px 25px;
+  padding: 25px 15px 30px 20px;
   align-items: center;
   justify-content: space-between;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.card__title {
+  max-width: 220px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-
+  color: #000;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29px;
 }
 
 .card__container {
@@ -43,10 +52,9 @@
   justify-content: space-between;
 }
 
-
-
 .card__like-button {
   background: transparent url(../images/unlike\ button.svg) center no-repeat;
   width: 21px;
   height: 18px;
+  border: none;
 }

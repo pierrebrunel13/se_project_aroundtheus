@@ -1,6 +1,7 @@
 .profile {
   display: flex;
   padding-top: 40px;
+  font-family: "Inter", Arial, sans-serif;
 }
 
 .profile__info {
