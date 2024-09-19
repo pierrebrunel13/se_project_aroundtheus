@@ -1,4 +1,4 @@
-.pages {
+.page {
   background-color: black;
   color: white;
 }
@@ -10,7 +10,7 @@
   margin: 0 auto;
 }
 
-.pages__content {
+.page__content {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
