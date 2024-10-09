@@ -1,5 +1,23 @@
 .header {
   margin-top: 45px;
+  padding-bottom: 41px;
   border-bottom: rgb(84 84 84 / 70%) 1px solid;
   size: 320px;
+}
+
+.logo__image {
+  height: 26px;
+  width: 124px;
+}
+
+@media screen and (max-width: 620px) {
+  /* 0 - 519px */
+  .header {
+    padding-bottom: 32px;
+    margin-top: 28px;
+    border-bottom: rgb(84 84 84 / 70%) 1px solid;
+    size: 320px;
+    margin-left: 27px;
+    box-sizing: border-box;
+  }
 }
