@@ -118,5 +118,9 @@
 
   .profile__edit-button {
     top: 0;
+    border: 1px solid white;
+    width: 18px;
+    height: 18px;
+    opacity: 0px;
   }
 }
