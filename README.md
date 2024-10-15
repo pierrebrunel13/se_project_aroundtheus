@@ -15,13 +15,11 @@
 - CSS3
 - Figma (design)
 
+**link to website**
+https://pierrebrunel13.github.io/se_project_aroundtheus/
+
 **images**
-<img src="../se_project_aroundtheus/images/latemar.png" alt="latemar">
-<img src="../se_project_aroundtheus/images/lago-di-braies.png" alt="lago-di-braies">
-<img src="../se_project_aroundtheus/images/lake-louise.png" alt="lake louise">
-<img src="../se_project_aroundtheus/images/vanoise-national-park.png" alt= "vanoise national park" >
-<img src="../se_project_aroundtheus/images/yosemite-valley.png" alt= "yosemite valley">  
-<img src="../se_project_aroundtheus/images/bald-mountains.png" alt="bald mountains">
+<img src="./websiteimg.png" alt="screenshot" width=800>
 
 
 
