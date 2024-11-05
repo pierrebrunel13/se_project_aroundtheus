@@ -57,6 +57,14 @@ function closePopop() {
     profileEditModal.classList.remove("modal__opened");
 }
 
+/* Events handlers */
+function handleProfileEditSubmit(e)  {
+    e.preventDefault();
+    profileTitle.textContent = profileTitleInput.value;
+    profileDescription.textContent = profileDescriptionInput.value;
+    closePopop()};
+
+
 /* EVENT LISTENER */
 
 profileEditButton.addEventListener('click', () => {
@@ -66,13 +74,6 @@ profileDescriptionInput.value = profileDescription.textContent;
    profileEditModal.classList.add("modal__opened")
 });
 
-modalCloseButton.addEventListener('click', () => {
-closePopop();
-} ); 
+modalCloseButton.addEventListener('click', closePopop); 
 
-profileEditForm.addEventListener('submit', (e) => {
-e.preventDefault();
-profileTitle.textContent = profileTitleInput.value;
-profileDescription.textContent = profileDescriptionInput.value;
-closePopop();
-});
+profileEditForm.addEventListener('submit',handleProfileEditSubmit);
