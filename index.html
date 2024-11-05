@@ -16,9 +16,9 @@
         <section class="profile page__section">
             <img src="./images/jacques-cousteau.png" alt="avatar" class="profile__image">
             <div class="profile__info">
-            <h1 class="profile__title">Jacques Cousteau</h1>
+            <h1 class="profile__title" id="profile__title">Jacques Cousteau</h1>
             <button class="profile__edit-button" id="profile__edit-button" type="button"></button>
-            <p class="profile__description">explorer</p>
+            <p class="profile__description" id="profile__description">explorer</p>
             </div>
             <button class="profile__add-button" type="button"></button>
         </section>
@@ -73,12 +73,16 @@
         <button class="modal__close"></button>
         <form class="modal__form">
             <p class="modal__heading">Edit profile</p>
-            <input type="text" name="title" />
-            <input type="text" name="description" />
+            <input class="modal__input" id="profile-title-input" type="text" placeholder="name" name="title" />
+            <input class="modal__input" id="profile-description-input" type="text" placeholder="description" name="description" />
             <button class="modal__button">Save</button>
         </form>
     </div>
 </div>
+
+<template id="card-template">
+
+</template>
 
 <script src="./scripts/index.js"></script>
 </body>
