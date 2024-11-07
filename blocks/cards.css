@@ -12,9 +12,8 @@
   margin: 0;
 }
 
-@media screen and ( max-width: 620px;){
-.cards{
-  gap: 36px;
+@media screen and (max-width: 620px) {
+  .cards {
+    gap: 36px;
+  }
 }
-}
-  
