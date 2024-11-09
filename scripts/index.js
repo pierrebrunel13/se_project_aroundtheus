@@ -57,11 +57,12 @@ function closePopop() {
 function getCardElement(cardData) {
  //clone the template element with all its content and store it in a cardElement variable
  const cardElement = cardTemplate.cloneNode(true);
- console.log(cardData.name);
- //access the card title and image and store them in variables
  const cardImageEl = cardElement.querySelector(".card__image");
+ //access the card title and image and store them in variables
  const cardTitleEl = cardElement.querySelector(".card__title");
- //set the path to the image to the link field of the object
+ //set the path to the image to the link field of the 
+ cardImageEl.src = cardData.link;
+ cardImageEl.alt = cardData.name;
  //set the image alt text to the name field of the object
  //set the card title to the name field of the object, too
  cardTitleEl.textContent = cardData.name;
