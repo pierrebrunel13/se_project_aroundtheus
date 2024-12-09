@@ -48,6 +48,8 @@ const cardTemplate =
 const addNewCardButton = document.querySelector(".profile__add-button");
 const profileAddModal = document.querySelector("#profile-add-modal");
 const profileAddModalCloseButton = profileAddModal.querySelector(".modal__close");
+const likeButtons = document.querySelector("card__like-button");
+
 /*functions*/
 
 function fillProfileForm() {
