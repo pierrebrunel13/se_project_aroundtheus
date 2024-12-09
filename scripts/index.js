@@ -34,7 +34,7 @@ const initialCards = [
 
 const profileEditButton = document.querySelector("#profile__edit-button");
 const profileEditModal = document.querySelector("#profile-edit-modal");
-const modalCloseButton = document.querySelector(".modal__close");
+const profileEditModalCloseButton = profileEditModal.querySelector(".modal__close");
 const profileTitle = document.querySelector("#profile__title");
 const profileDescription = document.querySelector("#profile__description");
 const profileTitleInput = document.querySelector("#profile-title-input");
@@ -45,7 +45,9 @@ const profileEditForm = profileEditModal.querySelector(".modal__form");
 const cardListEl = document.querySelector(".cards__list");
 const cardTemplate =
   document.querySelector("#card-template").content.firstElementChild;
-
+const addNewCardButton = document.querySelector(".profile__add-button");
+const profileAddModal = document.querySelector("#profile-add-modal");
+const profileAddModalCloseButton = profileAddModal.querySelector(".modal__close");
 /*functions*/
 
 function fillProfileForm() {
@@ -53,8 +55,12 @@ function fillProfileForm() {
   profileDescriptionInput.value = profileDescription.textContent;
 }
 
-function closePopop() {
-  profileEditModal.classList.remove("modal_opened");
+function openModal(modal) {
+  modal.classList.add("modal_opened");
+}
+
+function closePopop(modal) {
+  modal.classList.remove("modal_opened");
 }
 
 function getCardElement(cardData) {
@@ -78,7 +84,7 @@ function handleProfileEditSubmit(e) {
   e.preventDefault();
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
-  closePopop();
+  closePopop(profileEditModal);
 }
 
 /* EVENT LISTENER */
@@ -89,8 +95,8 @@ profileEditButton.addEventListener("click", () => {
   profileEditModal.classList.add("modal_opened");
 });
 
-modalCloseButton.addEventListener("click", closePopop);
-
+profileEditModalCloseButton.addEventListener("click", () => closePopop(profileEditModal));
+profileAddModalCloseButton.addEventListener("click", () => closePopop(profileAddModal));
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 
 initialCards.forEach((cardData) => {
@@ -98,7 +104,11 @@ initialCards.forEach((cardData) => {
   cardListEl.prepend(cardElement);
 });
 
+// add new card button
+addNewCardButton.addEventListener("click", () => openModal(profileAddModal));
 
 initialCards.forEach((cardData) => {
+  const cardsWrap = document.querySelector(".cards__list");
   cardsWrap.prepend(getCardElement(cardData));
 });
+
