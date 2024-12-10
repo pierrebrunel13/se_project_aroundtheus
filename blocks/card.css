@@ -53,3 +53,11 @@
 .card__like-button:hover {
   opacity: 50%;
 }
+
+.card__delete-button {
+  background-image: url(../images/Trash.svg) center no-repeat;
+  width: 18px;
+  height: 19.3px;
+  cursor: pointer;
+
+}
