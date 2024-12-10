@@ -48,7 +48,7 @@ const cardTemplate =
 const addNewCardButton = document.querySelector(".profile__add-button");
 const profileAddModal = document.querySelector("#profile-add-modal");
 const profileAddModalCloseButton = profileAddModal.querySelector(".modal__close");
-const likeButtons = document.querySelector("card__like-button");
+
 
 /*functions*/
 
@@ -109,8 +109,10 @@ initialCards.forEach((cardData) => {
 // add new card button
 addNewCardButton.addEventListener("click", () => openModal(profileAddModal));
 
-initialCards.forEach((cardData) => {
-  const cardsWrap = document.querySelector(".cards__list");
-  cardsWrap.prepend(getCardElement(cardData));
-});
+const likeButtons = document.querySelectorAll("card__like-button");
+likeButtons.forEach(likebutton => {
+  likebutton.addEventListener("click",() => {
+
+  })
+})
 
