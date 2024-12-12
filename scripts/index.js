@@ -84,6 +84,12 @@ function getCardElement(cardData) {
   return cardElement;
 }
 
+function renderCard(cardData) {
+  const cardElement = getCardElement(cardData);
+  cardListEl.prepend(cardElement);
+
+}
+
 /* Events handlers */
 function handleProfileEditSubmit(e) {
   e.preventDefault();
@@ -93,13 +99,11 @@ function handleProfileEditSubmit(e) {
 }
 
 
-function handleAddCardFormSubmit(e) {
+function handleProfileAddSubmit(e) {
   e.preventDefault();
-  const titleValue = cardTitleInput.value;
-  const urlValue = cardUrlInput.value;
-  return console.log(titleValue, titleValue);
-  return console.log(urlValue, urlValue);
-  const cardElement = getCardElement();
+  const name = cardTitleInput.value;
+  const link = cardUrlInput.value;
+  renderCard({name, link}, cardListEl);
   closePopop(profileAddModal);
 }
 
@@ -116,10 +120,9 @@ profileAddModalCloseButton.addEventListener("click", () => closePopop(profileAdd
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 profileAddForm.addEventListener("submit", handleProfileAddSubmit);
 
-initialCards.forEach((cardData) => {
-  const cardElement = getCardElement(cardData);
-  cardListEl.prepend(cardElement);
-});
+initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
+
+
 
 // add new card button
 addNewCardButton.addEventListener("click", () => openModal(profileAddModal));
