@@ -47,6 +47,7 @@ const addNewCardButton = document.querySelector(".profile__add-button");
 const profileAddModalCloseButton = profileAddModal.querySelector(".modal__close");
 const cardTitleInput = profileAddForm.querySelector("#modal__input_type_title");
 const cardUrlInput = profileAddForm.querySelector("#modal__input_type_url");
+const imageOpenModal = document.querySelector("#image__open-modal");
 
 
 /*functions*/
