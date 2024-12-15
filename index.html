@@ -10,26 +10,14 @@
   <body class="page">
     <div class="page__content">
       <header class="header page__section">
-        <img
-          src="./images/Aroundtheu.s.svg.svg"
-          alt="around the U.S"
-          class="header__image"
-        />
+        <img src="./images/Aroundtheu.s.svg.svg" alt="around the U.S" class="header__image" />
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img
-            src="./images/jacques-cousteau.png"
-            alt="avatar"
-            class="profile__image"
-          />
+          <img src="./images/jacques-cousteau.png" alt="avatar" class="profile__image" />
           <div class="profile__info">
             <h1 class="profile__title" id="profile__title">Jacques Cousteau</h1>
-            <button
-              class="profile__edit-button"
-              id="profile__edit-button"
-              type="button"
-            ></button>
+            <button class="profile__edit-button" id="profile__edit-button" type="button"></button>
             <p class="profile__description" id="profile__description">explorer</p>
           </div>
           <button class="profile__add-button" type="button"></button>
@@ -42,7 +30,7 @@
         <p class="footer__copyright">&copy; 2022 Around The U.S.</p>
       </footer>
     </div>
-<!--------------Edit modal------------>
+    <!--------------Edit modal------------>
     <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
         <button class="modal__close" type="button"></button>
@@ -66,50 +54,49 @@
         </form>
       </div>
     </div>
-    
+
     <!----------Add card modal--------->
     <div class="modal" id="profile-add-modal">
       <div class="modal__container">
         <button class="modal__close" type="button"></button>
-    <h2 class="modal__heading">New Place </h2>
-    <form class="modal__form" id="add-card-form">
-      <input
-      class="modal__input"
-      id="modal__input_type_title"
-      type="text"
-      placeholder="title"
-      name="title"
-      />
-      <input
-      class="modal__input "
-      id="modal__input_type_url"
-      type="text"
-      placeholder="Image url"
-      name="url"
-      />
-      <button class="modal__button">Save</button>
-    </form>
-  </div>
-</div>
-
-<!-----image modal-->
-<img class="modal" id="image__open-modal" src="" alt= />
-  <div id="imageModal" class="modal">
-    <span id="closeBtn" class="close">&times;</span>
-    <img id="modalImage" class="modal-content" />
-    <div id="caption"></div>
-  </div>
-
-<template id="card-template">
-  <li class="card">
-    <img src="" alt="" class="card__image" />
-    <div class="card__description">
-      <h2 class="card__title"></h2>
-      <button class="card__like-button" type="button"></button>
-      <button class="card__delete-button" type="button"></button>
+        <h2 class="modal__heading">New Place</h2>
+        <form class="modal__form" id="add-card-form">
+          <input
+            class="modal__input"
+            id="modal__input_type_title"
+            type="text"
+            placeholder="title"
+            name="title"
+          />
+          <input
+            class="modal__input"
+            id="modal__input_type_url"
+            type="text"
+            placeholder="Image url"
+            name="url"
+          />
+          <button class="modal__button">Save</button>
+        </form>
+      </div>
     </div>
-  </li>
-</template>
+
+    <!-----image modal-->
+    <div id="image__open-modal" class="modal modal_preview">
+      <img class="modal__image" src="" alt="" />
+      <button id="image__close" class="modal__close" type="button"></button>
+      <p class="modal__caption" id="caption"></p>
+    </div>
+
+    <template id="card-template">
+      <li class="card">
+        <img src="" alt="" class="card__image" />
+        <div class="card__description">
+          <h2 class="card__title"></h2>
+          <button class="card__like-button" type="button"></button>
+          <button class="card__delete-button" type="button"></button>
+        </div>
+      </li>
+    </template>
 
     <script src="./scripts/index.js"></script>
   </body>
