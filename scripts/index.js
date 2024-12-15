@@ -50,6 +50,7 @@ const cardUrlInput = profileAddForm.querySelector("#modal__input_type_url");
 const imageOpenModal = document.querySelector("#image__open-modal");
 const previewImage = imageOpenModal.querySelector(".modal__image");
 const previewCaption = imageOpenModal.querySelector(".modal__caption");
+const imageRemoveButton = document.querySelector("#image__close-button");
 /*functions*/
 
 function fillProfileForm() {
@@ -90,6 +91,10 @@ function getCardElement(cardData) {
     cardElement.remove();
   });
   cardImageEl.addEventListener("click", () => handleOpenImage(cardData));
+imageRemoveButton.addEventListener("click", () => {
+  closePopop(imageOpenModal);
+});
+
   return cardElement;
 }
 
