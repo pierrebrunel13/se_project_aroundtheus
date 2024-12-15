@@ -17,6 +17,10 @@
   display: flex;
   visibility: visible;
   opacity: 1;
+  max-width: 75vw;
+  max-height: 75vh;
+  padding-top: 90px;
+  padding-left: 232px;
 }
 
 .modal__container {
@@ -91,34 +95,19 @@
   opacity: 80%;
 }
 
-.modal_preview {
+.modal_image {
   width: 433px;
   height: 540px;
-  top: 90px;
-  left: 424px;
-  gap: 0px;
-  opacity: 0px;
-  object-fit: contain;
 }
 
 .modal__caption {
   width: 291px;
   height: 12px;
-  top: 640px;
-  left: 232px;
-  gap: 0px;
-  opacity: 0px;
 }
 
 .image_close {
-  display: flex;
   width: 40px;
   height: 40px;
-  top: 41px;
-  left: 878.28px;
-  gap: 0px;
-  opacity: 0px;
-  rotation: -45 deg;
 }
 
 @media screen and (max-width: 620px) {
