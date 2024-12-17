@@ -73,6 +73,10 @@ const handleOpenImage = (cardData) => {
   openModal(imageOpenModal);
 };
 
+imageRemoveButton.addEventListener("click", () => {
+  closePopup(imageOpenModal);
+});
+
 function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageEl = cardElement.querySelector(".card__image");
@@ -91,9 +95,7 @@ function getCardElement(cardData) {
     cardElement.remove();
   });
   cardImageEl.addEventListener("click", () => handleOpenImage(cardData));
-imageRemoveButton.addEventListener("click", () => {
-  closePopup(imageOpenModal);
-});
+
 
   return cardElement;
 }
@@ -116,7 +118,8 @@ function handleProfileAddSubmit(e) {
   const name = cardTitleInput.value;
   const link = cardUrlInput.value;
   renderCard({ name, link }, cardListEl);
-  closePopop(profileAddModal);
+  closePopup(profileAddModal);
+  e.target.reset();
 }
 
 /* EVENT LISTENER */

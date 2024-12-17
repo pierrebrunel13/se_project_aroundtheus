@@ -11,17 +11,14 @@
   opacity: 0;
   padding: 0 19px;
   font-family: "Inter", "Arial", sans-serif;
-  transition: visibility 0.3s, opacity 0.3s ease-in; 
+  transition: visibility 0.3s, opacity 0.3s ease-in;
   justify-content: center;
   align-items: center;
 }
 
 .modal_opened {
-  display: flex;
   visibility: visible;
   opacity: 1;
-  flex-direction: column;
-  transition: visibility 0s, opacity 0.6s;
 }
 
 .modal__container {
@@ -34,7 +31,7 @@
 }
 
 .modal__close {
-  background-image: url(../images/Close\ Icon.svg);
+  background-image: url(../images/Close-Icon.svg);
   border: none;
   position: absolute;
   width: 40px;
@@ -101,7 +98,6 @@
   width: fit-content;
   max-height: 70vh;
   max-width: 70vw;
-  width;
 }
 
 .modal__caption {
