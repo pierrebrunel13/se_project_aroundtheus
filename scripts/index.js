@@ -127,7 +127,7 @@ function handleProfileAddSubmit(e) {
 profileEditButton.addEventListener("click", () => {
   fillProfileForm();
 
-  profileEditModal.classList.add("modal_opened");
+  openModal(profileEditModal);
 });
 
 profileEditModalCloseButton.addEventListener("click", () => closePopup(profileEditModal));

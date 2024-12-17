@@ -105,7 +105,7 @@
   height: 12px;
 }
 
-.modal__container-preview_image {
+.modal__container_preview_image {
   display: flex;
   flex-direction: column;
   max-width: 75vw;
