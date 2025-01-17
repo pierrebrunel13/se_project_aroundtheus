@@ -1,12 +1,18 @@
-//console.log('hello from validation.js');
+
 // enabling validation by calling enableValidation()
 // pass all the settings on call
+function enableValidation(options) {
+    const formEls = [...document.querySelectorAll(".popup__form")];
+    console.log(formEls);
+};
 
-enableValidation({
+const config = {
     formSelector: ".popup__form",
-    inputSelector: ".popup__input",
+    inputSelector: ".popup__input", 
     submitButtonSelector: ".popup__button",
     inactiveButtonClass: "popup__button_disabled",
     inputErrorClass: "popup__input_type_error",
     errorClass: "popup__error_visible"
-  });
+  };
+
+enableValidation(config);
