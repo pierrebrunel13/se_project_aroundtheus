@@ -3,11 +3,11 @@
 
 function showInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
   // const { inputErrorClass } = options;
-  const errorMessageEl = formEl.querySelector("#${inputEl.id}-error");
+  const errorMessageEl = formEl.querySelector('#${inputEl.id}-error');
   inputEl.classList.add(inputErrorClass);
   errorMessageEl.textContent = inputEl.validationMessage;
   errorMessageEl.classList.add(errorClass);
-}
+};
 
 function hideInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
   ///const { inputErrorClass } = options;
@@ -15,7 +15,7 @@ function hideInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
   inputEl.classList.remove(inputErrorClass);
   errorMessageEl.textContent = "";
   errorMessageEl.classList.remove(errorClass);
-}
+};
 
 function checkInputValidity(formEl, inputEl, options) {
   if (!inputEl.validity.valid) {
@@ -23,7 +23,7 @@ function checkInputValidity(formEl, inputEl, options) {
   } else {
     hideInputError(formEl, inputEl, options);
   }
-}
+};
 
 const hasInvalidInput = (inputList) => {
   return inputList.some((inputEl) => {
@@ -42,7 +42,7 @@ function toggleButtonState(inputList, submitButton, { inactiveButtonClass }) {
     submitButton.classList.remove(inactiveButtonClass);
     submitButton.disabled = false;
   }
-}
+};
 
 function setEventListeners(inputList, formEl, options) {
   const { inputSelector } = options;
@@ -50,11 +50,14 @@ function setEventListeners(inputList, formEl, options) {
   const submitButton = formEl.querySelector(".modal__button");
   inputList.forEach((inputEl) => {
     inputEl.addEventListener("input", (e) => {
-      checkInputValidity(formEl, inputEl, options);
-      toggleButtonState(inputList, submitButton, options);
+     checkInputValidity(formEl, inputEl, options);
+    toggleButtonState(inputList, submitButton, options);
     });
   });
-}
+};
+
+
+
 
 function enableValidation(options) {
   const formEls = [...document.querySelectorAll(options.formSelector)];
@@ -75,7 +78,7 @@ function enableValidation(options) {
     //enable button
     // reset error message
   });
-}
+};
 
 const config = {
   formSelector: ".modal__form",
