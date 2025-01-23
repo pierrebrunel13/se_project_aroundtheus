@@ -60,9 +60,11 @@ function fillProfileForm() {
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keyup", handleEscaped)
 }
 
 function closePopup(modal) {
+  console.log(modal)
   modal.classList.remove("modal_opened");
 }
 
@@ -121,6 +123,30 @@ function handleProfileAddSubmit(e) {
   closePopup(profileAddModal);
   e.target.reset();
 }
+
+const  escapeEvent = (e) => {
+  if (e.key === "Escape") {
+  const opened = document.querySelector(".modal_opened")
+  console.log(opened)
+    closePopup(opened);
+  }
+  console.log(`escapeEvt: ${e}`)
+}
+
+const handleEscaped = (e) => {
+  escapeEvent(e)
+  
+}
+
+function handleOverlayClick(e) {
+if (e.target.classList.contains("modal_opened")) {
+  closePopup(e.target);
+}
+}
+
+document.querySelectorAll(".modal").forEach((modal) => {
+  modal.addEventListener("click", handleOverlayClick);
+});
 
 /* EVENT LISTENER */
 
