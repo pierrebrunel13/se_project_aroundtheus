@@ -60,12 +60,12 @@ function fillProfileForm() {
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
-  document.addEventListener("keyup", handleEscaped)
+  document.addEventListener("keyup", handleEscape);
 }
 
 function closePopup(modal) {
-  console.log(modal)
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keyup", handleEscape);
 }
 
 const handleOpenImage = (cardData) => {
@@ -124,19 +124,17 @@ function handleProfileAddSubmit(e) {
   e.target.reset();
 }
 
-const  escapeEvent = (e) => {
-  if (e.key === "Escape") {
-  const opened = document.querySelector(".modal_opened")
-  console.log(opened)
-    closePopup(opened);
-  }
-  console.log(`escapeEvt: ${e}`)
-}
 
-const handleEscaped = (e) => {
-  escapeEvent(e)
-  
-}
+
+const handleEscape = (e) => {
+  if (e.key === "Escape") {
+    const openModal = document.querySelector(".modal_opened");
+    if (openModal) {
+      closePopup(openModal);
+    }
+  }
+};
+
 
 function handleOverlayClick(e) {
 if (e.target.classList.contains("modal_opened")) {
