@@ -98,7 +98,6 @@ function getCardElement(cardData) {
   });
   cardImageEl.addEventListener("click", () => handleOpenImage(cardData));
 
-
   return cardElement;
 }
 
@@ -124,8 +123,6 @@ function handleProfileAddSubmit(e) {
   e.target.reset();
 }
 
-
-
 const handleEscape = (e) => {
   if (e.key === "Escape") {
     const openModal = document.querySelector(".modal_opened");
@@ -135,11 +132,10 @@ const handleEscape = (e) => {
   }
 };
 
-
 function handleOverlayClick(e) {
-if (e.target.classList.contains("modal_opened")) {
-  closePopup(e.target);
-}
+  if (e.target.classList.contains("modal_opened")) {
+    closePopup(e.target);
+  }
 }
 
 document.querySelectorAll(".modal").forEach((modal) => {
