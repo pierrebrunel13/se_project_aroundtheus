@@ -1,4 +1,4 @@
-import Card from "./Card.js"
+import Card from "./Card.js";
 
 const initialCards = [
   {
@@ -31,6 +31,14 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
   },
 ];
+
+const cardData = {
+  name: "Yosemite Valley",
+  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
+};
+
+const card = new Card(cardData, "#card-template");
+card.getView();
 
 /*Element*/
 const profileEditButton = document.querySelector("#profile__edit-button");
@@ -96,7 +104,7 @@ function getCardElement(cardData) {
     likeButton.classList.toggle("card__like-button_active");
   });
   deleteButton.addEventListener("click", () => {
-    cardElement.remove();
+   cardElement.remove();
   });
   cardImageEl.addEventListener("click", () => handleOpenImage(cardData));
 
