@@ -1,5 +1,5 @@
 import Card from "./Card.js";
-
+import FormValidator from "./formvalidator.js";
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -89,6 +89,22 @@ imageRemoveButton.addEventListener("click", () => {
   closePopup(imageOpenModal);
 });
 
+//  validation /////
+
+const validationSettings = {
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__button",
+  inactiveButtonClass: "modal__button_disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error_visible",
+};
+
+const editFormElement = profileEditForm.querySelector(".modal__form");
+const addFormElement = profileEditForm.querySelector(".modal__form");
+
+const editFormValidator = new FormValidator(validationSettings, editFormElement);
+const addFormValidator = new FormValidator(validationSettings, addFormElementForm);
+
 function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageEl = cardElement.querySelector(".card__image");
@@ -104,7 +120,7 @@ function getCardElement(cardData) {
     likeButton.classList.toggle("card__like-button_active");
   });
   deleteButton.addEventListener("click", () => {
-   cardElement.remove();
+    cardElement.remove();
   });
   cardImageEl.addEventListener("click", () => handleOpenImage(cardData));
 
