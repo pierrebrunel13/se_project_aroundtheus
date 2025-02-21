@@ -99,11 +99,10 @@ const validationSettings = {
   errorClass: "modal__error_visible",
 };
 
-const editFormElement = profileEditForm.querySelector(".modal__form");
-const addFormElement = profileEditForm.querySelector(".modal__form");
-
-const editFormValidator = new FormValidator(validationSettings, editFormElement);
-const addFormValidator = new FormValidator(validationSettings, addFormElementForm);
+const editFormValidator = new FormValidator(validationSettings, profileEditForm);
+editFormValidator.enableValidation();
+const addFormValidator = new FormValidator(validationSettings, profileAddForm);
+addFormValidator.enableValidation();
 
 function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
