@@ -105,7 +105,7 @@ const addFormValidator = new FormValidator(validationSettings, profileAddForm);
 addFormValidator.enableValidation();
 
 function getCardElement(cardData) {
-  const card = new Card(cardData, "#card-template");
+  const card = new Card(cardData, "#card-template", handleOpenImage);
   return card.getView();
 }
 
