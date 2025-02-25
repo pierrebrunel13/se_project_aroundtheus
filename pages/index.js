@@ -86,6 +86,19 @@ imageRemoveButton.addEventListener("click", () => {
   closePopup(imageOpenModal);
 });
 
+function toggleSubmitButton() {
+  if (!cardTitleInput.value.trim() || !cardUrlInput.value.trim()) {
+    profileAddSubmitButton.disabled = true;
+    profileAddSubmitButton.classList.add("modal__button_disabled"); 
+  } else {
+    profileAddSubmitButton.disabled = false;
+    profileAddSubmitButton.classList.remove("modal__button_disabled");
+  }
+}
+
+cardTitleInput.addEventListener("input", toggleSubmitButton);
+cardUrlInput.addEventListener("input", toggleSubmitButton);
+
 //  validation /////
 
 const validationSettings = {
