@@ -89,7 +89,7 @@ imageRemoveButton.addEventListener("click", () => {
 function toggleSubmitButton() {
   if (!cardTitleInput.value.trim() || !cardUrlInput.value.trim()) {
     profileAddSubmitButton.disabled = true;
-    profileAddSubmitButton.classList.add("modal__button_disabled"); 
+    profileAddSubmitButton.classList.add("modal__button_disabled");
   } else {
     profileAddSubmitButton.disabled = false;
     profileAddSubmitButton.classList.remove("modal__button_disabled");
@@ -134,11 +134,13 @@ function handleProfileEditSubmit(e) {
 
 function handleProfileAddSubmit(e) {
   e.preventDefault();
-  const name = cardTitleInput.value;
-  const link = cardUrlInput.value;
+  const name = cardTitleInput.value.trim();
+  const link = cardUrlInput.value.trim();
+  if (!name || !link) return;
   renderCard({ name, link }, cardListEl);
   closePopup(profileAddModal);
   e.target.reset();
+  toggleSubmitButton();
 }
 
 const handleEscape = (e) => {
@@ -172,6 +174,11 @@ profileEditModalCloseButton.addEventListener("click", () => closePopup(profileEd
 profileAddModalCloseButton.addEventListener("click", () => closePopup(profileAddModal));
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 profileAddForm.addEventListener("submit", handleProfileAddSubmit);
+
+addNewCardButton.addEventListener("click", () => {
+  toggleSubmitButton();
+  openModal(profileAddModal);
+});
 
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
 
