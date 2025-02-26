@@ -58,7 +58,7 @@ const imageOpenModal = document.querySelector("#image__open-modal");
 const previewImage = imageOpenModal.querySelector(".modal__image");
 const previewCaption = imageOpenModal.querySelector(".modal__caption");
 const imageRemoveButton = document.querySelector("#image__close-button");
-const profileAddSubmitButton = profileAddModal.querySelector(".modal__button");
+// const profileAddSubmitButton = profileAddModal.querySelector(".modal__button");
 /*functions*/
 function fillProfileForm() {
   profileTitleInput.value = profileTitle.textContent;
@@ -86,18 +86,18 @@ imageRemoveButton.addEventListener("click", () => {
   closePopup(imageOpenModal);
 });
 
-function toggleSubmitButton() {
-  if (!cardTitleInput.value.trim() || !cardUrlInput.value.trim()) {
-    profileAddSubmitButton.disabled = true;
-    profileAddSubmitButton.classList.add("modal__button_disabled");
-  } else {
-    profileAddSubmitButton.disabled = false;
-    profileAddSubmitButton.classList.remove("modal__button_disabled");
-  }
-}
+// function toggleSubmitButton() {
+  // if (!cardTitleInput.value.trim() || !cardUrlInput.value.trim()) {
+    // profileAddSubmitButton.disabled = true;
+    // profileAddSubmitButton.classList.add("modal__button_disabled");
+  // } else {
+    // profileAddSubmitButton.disabled = false;
+    // profileAddSubmitButton.classList.remove("modal__button_disabled");
+  // }
+// }
 
-cardTitleInput.addEventListener("input", toggleSubmitButton);
-cardUrlInput.addEventListener("input", toggleSubmitButton);
+// cardTitleInput.addEventListener("input", toggleSubmitButton);
+// cardUrlInput.addEventListener("input", toggleSubmitButton);
 
 //  validation /////
 
@@ -140,7 +140,7 @@ function handleProfileAddSubmit(e) {
   renderCard({ name, link }, cardListEl);
   closePopup(profileAddModal);
   e.target.reset();
-  toggleSubmitButton();
+  addFormValidator.toggleButtonState()();
 }
 
 const handleEscape = (e) => {
@@ -175,8 +175,7 @@ profileAddModalCloseButton.addEventListener("click", () => closePopup(profileAdd
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 profileAddForm.addEventListener("submit", handleProfileAddSubmit);
 
-addNewCardButton.addEventListener("click", () => {
-  toggleSubmitButton();
+addNewCardButton.addEventListener("click", () => {;
   openModal(profileAddModal);
 });
 
