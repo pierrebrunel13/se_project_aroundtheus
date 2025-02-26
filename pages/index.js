@@ -1,5 +1,5 @@
 import Card from "../scripts/Card.js";
-import FormValidator from "../scripts/ForrmValidator.js";
+import FormValidator from "../scripts/FormValidator.js";
 const initialCards = [
   {
     name: "Yosemite Valley",
