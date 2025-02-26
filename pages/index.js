@@ -58,8 +58,8 @@ const imageOpenModal = document.querySelector("#image__open-modal");
 const previewImage = imageOpenModal.querySelector(".modal__image");
 const previewCaption = imageOpenModal.querySelector(".modal__caption");
 const imageRemoveButton = document.querySelector("#image__close-button");
+const profileAddSubmitButton = profileAddModal.querySelector(".modal__button");
 /*functions*/
-
 function fillProfileForm() {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
