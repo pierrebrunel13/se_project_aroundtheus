@@ -58,7 +58,7 @@ const imageOpenModal = document.querySelector("#image__open-modal");
 const previewImage = imageOpenModal.querySelector(".modal__image");
 const previewCaption = imageOpenModal.querySelector(".modal__caption");
 const imageRemoveButton = document.querySelector("#image__close-button");
-// const profileAddSubmitButton = profileAddModal.querySelector(".modal__button");
+
 /*functions*/
 function fillProfileForm() {
   profileTitleInput.value = profileTitle.textContent;
@@ -85,19 +85,6 @@ const handleOpenImage = (cardData) => {
 imageRemoveButton.addEventListener("click", () => {
   closePopup(imageOpenModal);
 });
-
-// function toggleSubmitButton() {
-  // if (!cardTitleInput.value.trim() || !cardUrlInput.value.trim()) {
-    // profileAddSubmitButton.disabled = true;
-    // profileAddSubmitButton.classList.add("modal__button_disabled");
-  // } else {
-    // profileAddSubmitButton.disabled = false;
-    // profileAddSubmitButton.classList.remove("modal__button_disabled");
-  // }
-// }
-
-// cardTitleInput.addEventListener("input", toggleSubmitButton);
-// cardUrlInput.addEventListener("input", toggleSubmitButton);
 
 //  validation /////
 
@@ -175,7 +162,7 @@ profileAddModalCloseButton.addEventListener("click", () => closePopup(profileAdd
 profileEditForm.addEventListener("submit", handleProfileEditSubmit);
 profileAddForm.addEventListener("submit", handleProfileAddSubmit);
 
-addNewCardButton.addEventListener("click", () => {;
+addNewCardButton.addEventListener("click", () => {
   openModal(profileAddModal);
 });
 
