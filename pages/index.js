@@ -127,7 +127,7 @@ function handleProfileAddSubmit(e) {
   renderCard({ name, link }, cardListEl);
   closePopup(profileAddModal);
   e.target.reset();
-  addFormValidator.toggleButtonState()();
+  addFormValidator.toggleButtonState();
 }
 
 const handleEscape = (e) => {
