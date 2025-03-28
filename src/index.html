@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta content="ie=edge" http-equiv="x-ua-compatible" />
     <title>Around The U.S</title>
-    <link href="./pages/index.css" rel="stylesheet" />
   </head>
   <body class="page">
     <div class="page__content">
       <header class="header page__section">
-        <img src="./images/Aroundtheu.s.svg.svg" alt="around the U.S" class="header__image" />
+        <img src="<%=require('./images/Aroundtheu.s.svg.svg')%>" alt="around the U.S" class="header__image">
+        <!-- <img src="./images/Aroundtheu.s.svg.svg" alt="around the U.S" class="header__image" /> -->
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img src="./images/jacques-cousteau.png" alt="avatar" class="profile__image" />
+          <img src="<%=require('./images/jacques-cousteau.png')%>" alt="avatar" class="profile__image">
+          <!-- <img src="./images/jacques-cousteau.png" alt="avatar" class="profile__image" /> -->
           <div class="profile__info">
             <h1 class="profile__title" id="profile__title">Jacques Cousteau</h1>
             <button class="profile__edit-button" id="profile__edit-button" type="button"></button>
@@ -122,8 +123,6 @@
         </div>
       </li>
     </template>
-
-    <script src="./pages/index.js" type="module"></script>
     
 
   </body>
