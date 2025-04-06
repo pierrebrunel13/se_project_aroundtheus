@@ -1,7 +1,9 @@
 import "../pages/index.css";
-
 import Card from "../scripts/Card.js";
 import FormValidator from "../scripts/FormValidator.js";
+import PopupWithForm from "../scripts/PopupWithForm.js";
+//import PopupWithImage from "../scripts/PopupWithImage.js"
+
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -67,15 +69,15 @@ function fillProfileForm() {
   profileDescriptionInput.value = profileDescription.textContent;
 }
 
-function openModal(modal) {
-  modal.classList.add("modal_opened");
-  document.addEventListener("keyup", handleEscape);
-}
+// function openModal(modal) {
+//   modal.classList.add("modal_opened");
+//   document.addEventListener("keyup", handleEscape);
+// }
 
-function closePopup(modal) {
+/*function closePopup(modal) {
   modal.classList.remove("modal_opened");
   document.removeEventListener("keyup", handleEscape);
-}
+}*/
 
 const handleOpenImage = (cardData) => {
   previewImage.src = cardData.link;
@@ -132,14 +134,14 @@ function handleProfileAddSubmit(e) {
   addFormValidator.toggleButtonState();
 }
 
-const handleEscape = (e) => {
-  if (e.key === "Escape") {
-    const openModal = document.querySelector(".modal_opened");
-    if (openModal) {
-      closePopup(openModal);
-    }
-  }
-};
+// const handleEscape = (e) => {
+//   if (e.key === "Escape") {
+//     const openModal = document.querySelector(".modal_opened");
+//     if (openModal) {
+//       closePopup(openModal);
+//     }
+//   }
+// };
 
 function handleOverlayClick(e) {
   if (e.target.classList.contains("modal_opened")) {
@@ -172,3 +174,11 @@ initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
 
 // add new card button
 addNewCardButton.addEventListener("click", () => openModal(profileAddModal));
+
+const   NewCardPopup = new PopupWithForm("#profile-add-modal", () => {});
+NewCardPopup.open()
+
+
+NewCardPopup.close();
+
+
