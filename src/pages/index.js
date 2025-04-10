@@ -26,9 +26,10 @@ const imagePopup = new PopupWithImage("#image__open-modal");
 imagePopup.setEventListeners();
 
 const profileEditPopup = new PopupWithForm("#profile-edit-modal", (formData) => {
+  console.log(formData);
   userInfo.setUserInfo({
-    name: formData["profile-title-input"],
-    job: formData["profile-description-input"]
+    name: formData.title,
+    job: formData.description,
   });
   profileEditPopup.close();
 });
@@ -36,8 +37,8 @@ profileEditPopup.setEventListeners();
 
 const profileAddPopup = new PopupWithForm("#profile-add-modal", (formData) => {
   const cardData = {
-    name: formData["modal__input_type_title"],
-    link: formData["modal__input_type_url"]
+    name: formData.title,
+    link: formData.url,
   };
   const cardElement = createCard(cardData);
   cardSection.addItem(cardElement);
@@ -67,7 +68,7 @@ const cardSection = new Section(
     renderer: (cardData) => {
       const cardElement = createCard(cardData);
       cardSection.addItem(cardElement);
-    }
+    },
   },
   ".cards__list"
 );
