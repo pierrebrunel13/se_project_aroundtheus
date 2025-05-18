@@ -1,11 +1,15 @@
 export default class Card {
-  constructor(cardData, cardSelector, handleOpenImage) {
+  constructor(cardData, cardSelector, handleOpenImage, handleDeleteClick) {
     this._name = cardData.name;
     this._link = cardData.link;
     this._cardSeletor = cardSelector;
     this._handleOpenImage = handleOpenImage;
     this._cardData = cardData;
+    this._handleDeleteClick = handleDeleteClick;
   }
+  
+
+  
 
   _setEventListeners() {
     this._cardElement.querySelector(".card__like-button").addEventListener("click", () => {
@@ -13,7 +17,7 @@ export default class Card {
     });
 
     this._cardElement.querySelector(".card__delete-button").addEventListener("click", () => {
-      this._handleDeleteCard();
+      this._handleDeleteClick(this._cardData);
     });
 
     this._cardElement.querySelector(".card__image").addEventListener("click", () => {
