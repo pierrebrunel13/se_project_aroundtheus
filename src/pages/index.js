@@ -6,6 +6,8 @@ import PopupWithImage from "../components/PopupWithImage.js";
 import Section from "../components/Section.js";
 import UserInfo from "../components/UserInfo.js";
 import { initialCards, validationSettings } from "../utils/constants.js";
+import { api } from "../components/api.js";
+import PopupWithConfirm from "../components/PopupWithConfirm.js";
 
 // DOM
 const profileEditButton = document.querySelector("#profile__edit-button");
@@ -57,14 +59,29 @@ addFormValidator.enableValidation();
 
 // Card creation
 function createCard(data) {
-  const card = new Card(data, "#card-template", (cardData) => imagePopup.open(cardData));
+  const card = new Card(
+    data,
+    "#card-template",
+    (cardData) => imagePopup.open(cardData),
+    (cardData) => {
+      // open confirmation popup
+      confirmationPopup.open();
+
+      // delete card on server (api call) WHEN user clicks delete
+      // pass in the card id (found in cardData)
+    }
+  );
   return card.getView();
 }
+
+//  confirmation popup
+
+const confirmationPopup = new PopupWithConfirm( {popupSelector: "#delete-card-modal"});
+confirmationPopup.setEventListeners();
 
 // Section for cards
 const cardSection = new Section(
   {
-    items: initialCards,
     renderer: (cardData) => {
       const cardElement = createCard(cardData);
       cardSection.addItem(cardElement);
@@ -72,8 +89,6 @@ const cardSection = new Section(
   },
   ".cards__list"
 );
-
-cardSection.renderItems();
 
 // Event Listeners
 profileEditButton.addEventListener("click", () => {
@@ -86,3 +101,10 @@ profileEditButton.addEventListener("click", () => {
 profileAddButton.addEventListener("click", () => {
   profileAddPopup.open();
 });
+
+api
+  .getInitialCards()
+  .then((cards) => {
+    cardSection.renderItems(cards);
+  })
+  .catch((error) => {});
