@@ -28,5 +28,14 @@ export default class PopupWithForm extends Popup {
   close() {
     super.close();
   }
+
+  // In your PopupWithForm class
+setLoadingState(isLoading, buttonText = 'Saving...') {
+  const submitButton = this._formElement.querySelector('.modal__submit-button');
+  if (submitButton) {
+    submitButton.disabled = isLoading;
+    submitButton.textContent = isLoading ? buttonText : this._submitButtonText;
+  }
+}
 }
 

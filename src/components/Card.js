@@ -1,13 +1,25 @@
 export default class Card {
-  constructor(cardData, cardSelector, handleOpenImage, handleDeleteClick) {
-    this._name = cardData.name;
-    this._link = cardData.link;
-    this._cardSeletor = cardSelector;
-    this._handleOpenImage = handleOpenImage;
-    this._cardData = cardData;
+  constructor({
+    data,
+    cardSelector,
+    handleImageClick,
+    handleDeleteClick,
+    handleLikeClick,
+    currentUserId
+  }) {
+    this._data = data;
+    this._name = data.name;
+    this._link = data.link;
+    this._id = data._id;
+    this._likes = data.likes || [];
+    this._ownerId = data.owner._id;
+    this._currentUserId = currentUserId;
+    this._cardSelector = cardSelector;
+    this._handleImageClick = handleImageClick;
     this._handleDeleteClick = handleDeleteClick;
+    this._handleLikeClick = handleLikeClick;
   }
-  
+
 
   
 
@@ -53,4 +65,9 @@ export default class Card {
 
     return this._cardElement;
   }
+
+  
+
 }
+
+
