@@ -6,7 +6,7 @@ import PopupWithImage from "../components/PopupWithImage.js";
 import Section from "../components/Section.js";
 import UserInfo from "../components/UserInfo.js";
 import { initialCards, validationSettings } from "../utils/constants.js";
-import { api } from "../components/api.js";
+import { api } from "../components/Api.js";
 import PopupWithConfirm from "../components/PopupWithConfirm.js";
 
 // DOM Elements
@@ -30,7 +30,7 @@ const imagePopup = new PopupWithImage("#image__open-modal");
 imagePopup.setEventListeners();
 
 const confirmationPopup = new PopupWithConfirm({ 
-    popupSelector: "#delete-confirmation-modal" 
+    popupSelector: "#delete-card-modal" 
 });
 
 confirmationPopup.setEventListeners();
@@ -85,12 +85,12 @@ profileEditButton.addEventListener("click", () => {
   const { name, about } = userInfo.getUserInfo();
   profileTitleInput.value = name;
   profileDescriptionInput.value = about;
-  editFormValidator.resetValidation();
+  // editFormValidator.resetValidation();
   profileEditPopup.open();
 });
 
 profileAddButton.addEventListener("click", () => {
-  addFormValidator.resetValidation();
+  // addFormValidator.resetValidation();
   profileAddPopup.open();
 });
 

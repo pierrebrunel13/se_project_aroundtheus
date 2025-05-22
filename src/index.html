@@ -103,6 +103,27 @@
         </form>
       </div>
     </div>
+    
+  <div class="modal" id="avatar-edit-modal">
+      <div class="modal__container">
+        <button class="modal__close" type="button"></button>
+        <h2 class="modal__heading">Edit avatar</h2>
+        <form class="modal__form" id="edit-avatar-form">
+          <label class="modal__label">
+            <input
+              class="modal__input modal__input_type_card_name"
+              id="modal-avatar-input"
+              type="url"
+              placeholder="avatar link"
+              name="avatar"
+              required
+            />
+            <span class="modal__error" id="modal-avatar-input-error"></span>
+          </label>
+          <button class="modal__button" type="submit" >Save</button>
+        </form>
+      </div>
+    </div>
 
 
 
@@ -135,7 +156,7 @@
         </form>
       </div>
     
-      <!-- Add to your HTML -->
+      
 <div class="profile__image-container">
   <img class="profile__image" id="profile-avatar" src="#" alt="Profile picture" />
   <button class="profile__image-edit-button" id="profile-avatar-edit"></button>
