@@ -29,7 +29,8 @@ export default class Card {
     });
 
     this._cardElement.querySelector(".card__delete-button").addEventListener("click", () => {
-      this._handleDeleteCard();
+      // this._handleDeleteCard();
+      // this.removeCard();
       this._handleDeleteClick(this);
     });
 
@@ -39,9 +40,16 @@ export default class Card {
     });
   }
 
-  _handleDeleteCard() {
+//  removeCard() {
+// //   this._handleDeleteCard();
+
+// }
+
+
+  removeCard() {
     this._cardElement.remove();
     this._cardElement = null;
+    // this._removeCard();
   }
 
   _handleLikeIcon() {
