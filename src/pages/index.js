@@ -101,13 +101,14 @@ avatarEditButton.addEventListener("click", () => {
 // Functions
 function createCard(cardData) {
   // const card = new Card(params)
-  return new Card({
+  const card = new Card({
     data: cardData,
     cardSelector: "#card-template",
     // handleImageClick: (data) => imagePopup.open(data),
     handleImageClick: (name, link) => imagePopup.open(name, link),
     handleDeleteClick: (card) => {
       console.log("Delete button clicked");
+      confirmationPopup.open();
       // checking to see
       confirmationPopup.setSubmitAction(() => {
         // card.setLoadingState(true, "delete");
@@ -119,15 +120,15 @@ function createCard(cardData) {
             confirmationPopup.close();
           })
           .catch(console.error)
-          .finally(() => card.setLoadingState(false, "delete"));
+          .finally(() => confirmationPopup.setLoadingState(false, "delete"));
       });
-      confirmationPopup.open();
     },
     handleLikeClick: (isLiked) => {
       return isLiked ? api.unlikeCard(cardData._id) : api.likeCard(cardData._id);
     },
     currentUserId,
-  }).getView();
+  });
+  return card.getView();
 }
 // testing
 // this._popupElement

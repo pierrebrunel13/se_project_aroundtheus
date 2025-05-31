@@ -33,10 +33,7 @@ export default class PopupWithConfirm extends Popup {
 
   
 
-  close() {
-    super.close();
-    this._formElement.reset();
-  }
+  
   // testing 
    setLoadingState(isLoading, buttonText = 'Yes') {
     if (isLoading) {

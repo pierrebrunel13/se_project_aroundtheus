@@ -76,6 +76,46 @@
   margin-right: 30px;
 }
 
+
+/* .profile__avatar-edit-button {
+background: transparent url(../images/edit-Profile-avatar-button.svg) center no-repeat;
+width: 26px;
+height: 26px;
+top: 206px;
+left: 247px;
+} */
+
+.profile__avatar-edit-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px; /* same as avatar image */
+  height: 120px;
+  background: rgba(0, 0, 0, 0.6) url(../images/edit-Profile-avatar-button.svg) center no-repeat;
+  background-size: 26px 26px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.profile__avatar-container {
+  position: relative;
+  /* display: inline-block; */
+  /* border: 2px solid ; */
+  /* border-radius: 50%; */
+  /* overflow: hidden; */
+  /* width: 80px; */
+  /* height: 80px; */
+  /* object-fit: cover; */
+}
+
+.profile__avatar-container:hover .profile__avatar-edit-button {
+  opacity: 1;
+}
+
+
 @media screen and (max-width: 620px) {
   .profile {
     background-color: black;

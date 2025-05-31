@@ -14,8 +14,13 @@
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img src="<%=require('./images/jacques-cousteau.png')%>" alt="avatar" class="profile__image">
+         
           <!-- <img src="./images/jacques-cousteau.png" alt="avatar" class="profile__image" /> -->
+           <div class="profile__avatar-container">
+             <img src="<%=require('./images/jacques-cousteau.png')%>" alt="avatar" class="profile__image" id="profile-avatar">
+        
+        <button class="profile__avatar-edit-button" id="profile-avatar-edit"></button>
+      </div>
           <div class="profile__info">
             <h1 class="profile__title" id="profile__title">Jacques Cousteau</h1>
             <button class="profile__edit-button" id="profile__edit-button" type="button"></button>
@@ -155,12 +160,10 @@
           <button class="modal__button" type="submit">Yes</button>
         </form>
       </div>
+      </div>
     
       
-<div class="profile__image-container">
-  <img class="profile__image" id="profile-avatar" src="#" alt="Profile picture" />
-  <button class="profile__image-edit-button" id="profile-avatar-edit"></button>
-</div>
+      
 
   </body>
 </html>
