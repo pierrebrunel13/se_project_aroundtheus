@@ -100,18 +100,16 @@ avatarEditButton.addEventListener("click", () => {
 
 // Functions
 function createCard(cardData) {
-  // const card = new Card(params)
   const card = new Card({
     data: cardData,
     cardSelector: "#card-template",
-    // handleImageClick: (data) => imagePopup.open(data),
+
     handleImageClick: (name, link) => imagePopup.open(name, link),
     handleDeleteClick: (card) => {
       console.log("Delete button clicked");
       confirmationPopup.open();
-      // checking to see
+
       confirmationPopup.setSubmitAction(() => {
-        // card.setLoadingState(true, "delete");
         console.log(card);
         api
           .deleteCard(card.getId())
@@ -130,15 +128,6 @@ function createCard(cardData) {
   });
   return card.getView();
 }
-// testing
-// this._popupElement
-//   .querySelector(".modal__form")
-//   .addEventListener("submit", (evt) => {
-//     evt.preventDefault();
-//     if (this._handleSubmit) {
-//       this._handleSubmit();
-//     }
-//   });
 
 function handleProfileEditSubmit(formData) {
   profileEditPopup.setLoadingState(true);
