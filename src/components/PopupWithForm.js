@@ -6,12 +6,14 @@ export default class PopupWithForm extends Popup {
     this._formElement = this._popupElement.querySelector(".modal__form");
     this._inputList = this._formElement.querySelectorAll(".modal__input");
     this._handleFormSubmit = handleFormSubmit;
+
+    this._submitButton = this._formElement.querySelector(".modal__button");
+    this._initialButtonText = this._submitButton.textContent;
   }
 
-  
   _getInputValues() {
     const formValues = {};
-    this._inputList.forEach(input => {
+    this._inputList.forEach((input) => {
       formValues[input.name] = input.value;
     });
     return formValues;
@@ -25,17 +27,14 @@ export default class PopupWithForm extends Popup {
     });
   }
 
-  close() {
-    super.close();
-  }
+  // close() {
+  //   super.close();
+  // }
 
- 
-setLoadingState(isLoading, buttonText = 'Saving...') {
-  const submitButton = this._formElement.querySelector('.modal__submit-button');
-  if (submitButton) {
-    submitButton.disabled = isLoading;
-    submitButton.textContent = isLoading ? buttonText : this._submitButtonText;
+  setLoadingState(isLoading, buttonText = "Saving...") {
+    if (this._submitButton) {
+      this._submitButton.disabled = isLoading;
+      this._submitButton.textContent = isLoading ? buttonText : this._initialButtonText;
+    }
   }
 }
-}
-

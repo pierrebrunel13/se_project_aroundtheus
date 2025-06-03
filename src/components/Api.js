@@ -17,6 +17,19 @@ class Api {
     }).then(this._handleResponse);
   }
 
+   _request(endpoint, options = {}) {
+    const finalOptions = {
+      headers: {
+        ...this._headers,
+        ...(options.headers || {}),
+      },
+      ...options,
+    };
+    const url = `${this._baseUrl}${endpoint}`;
+    return fetch(url, finalOptions).then(this._handleResponse);
+  }
+
+
   setUserInfo(data) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
