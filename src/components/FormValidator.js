@@ -1,3 +1,5 @@
+// export default FormValidator;
+
 class FormValidator {
   constructor(settings, formEl) {
     this._inputSelector = settings.inputSelector;

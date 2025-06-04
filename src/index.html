@@ -3,18 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta content="ie=edge" http-equiv="x-ua-compatible" />
+    <met     a content="ie=edge" http-equiv="x-ua-compatible" />
     <title>Around The U.S</title>
-    <link href="./pages/index.css" rel="stylesheet" />
   </head>
   <body class="page">
     <div class="page__content">
       <header class="header page__section">
-        <img src="./images/Aroundtheu.s.svg.svg" alt="around the U.S" class="header__image" />
+        <img src="<%=require('./images/Aroundtheu.s.svg.svg')%>" alt="around the U.S" class="header__image">
+        <!-- <img src="./images/Aroundtheu.s.svg.svg" alt="around the U.S" class="header__image" /> -->
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img src="./images/jacques-cousteau.png" alt="avatar" class="profile__image" />
+         
+          <!-- <img src="./images/jacques-cousteau.png" alt="avatar" class="profile__image" /> -->
+           <div class="profile__avatar-container">
+             <img src="<%=require('./images/jacques-cousteau.png')%>" alt="avatar" class="profile__image" id="profile-avatar">
+        
+        <button class="profile__avatar-edit-button" id="profile-avatar-edit"></button>
+      </div>
           <div class="profile__info">
             <h1 class="profile__title" id="profile__title">Jacques Cousteau</h1>
             <button class="profile__edit-button" id="profile__edit-button" type="button"></button>
@@ -102,6 +108,29 @@
         </form>
       </div>
     </div>
+    
+  <div class="modal" id="avatar-edit-modal">
+      <div class="modal__container">
+        <button class="modal__close" type="button"></button>
+        <h2 class="modal__heading">Edit avatar</h2>
+        <form class="modal__form" id="edit-avatar-form">
+          <label class="modal__label">
+            <input
+              class="modal__input modal__input_type_card_name"
+              id="modal-avatar-input"
+              type="url"
+              placeholder="avatar link"
+              name="avatar"
+              required
+            />
+            <span class="modal__error" id="modal-avatar-input-error"></span>
+          </label>
+          <button class="modal__button" type="submit" >Save</button>
+        </form>
+      </div>
+    </div>
+
+
 
     <!-----image modal-->
     <div class="modal" id="image__open-modal">
@@ -123,8 +152,18 @@
       </li>
     </template>
 
-    <script src="./pages/index.js" type="module"></script>
+    <div class="modal" id="delete-card-modal">
+      <div class="modal__container">
+        <button class="modal__close" type="button"></button>
+        <p class="modal__heading">Are you sure?</p>
+        <form class="modal__form" id="delete-card-form">
+          <button class="modal__button" type="submit">Yes</button>
+        </form>
+      </div>
+      </div>
     
+      
+      
 
   </body>
 </html>
