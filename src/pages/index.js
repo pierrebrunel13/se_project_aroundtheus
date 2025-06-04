@@ -17,6 +17,7 @@ const profileDescriptionInput = document.querySelector("#profile-description-inp
 const profileEditForm = document.querySelector("#profile-edit-modal .modal__form");
 const profileAddForm = document.querySelector("#profile-add-modal .modal__form");
 const avatarEditButton = document.querySelector("#profile-avatar-edit");
+const AvatarEditForm = document.querySelector("#avatar-edit-modal .modal__form");
 
 // User Info
 const userInfo = new UserInfo({
@@ -50,6 +51,8 @@ editFormValidator.enableValidation();
 const addFormValidator = new FormValidator(validationSettings, profileAddForm);
 addFormValidator.enableValidation();
 
+const avatarFormValidator = new FormValidator(validationSettings, AvatarEditForm);
+avatarFormValidator.enableValidation();
 // Section for cards
 const cardSection = new Section(
   {
@@ -104,7 +107,7 @@ function createCard(cardData) {
     data: cardData,
     cardSelector: "#card-template",
 
-    handleImageClick: (name, link) => imagePopup.open(name, link),
+    handleImageClick: (name, link,) => imagePopup.open(name, link,),
     handleDeleteClick: (card) => {
       console.log("Delete button clicked");
       confirmationPopup.open();
@@ -122,6 +125,7 @@ function createCard(cardData) {
       });
     },
     handleLikeClick: (isLiked) => {
+      console.log(13123123123);
       return isLiked ? api.unlikeCard(cardData._id) : api.likeCard(cardData._id);
     },
     currentUserId,
@@ -130,7 +134,6 @@ function createCard(cardData) {
 }
 
 function handleProfileEditSubmit(formData) {
-  
   profileEditPopup.setLoadingState(true);
   api
     .setUserInfo({
@@ -163,6 +166,8 @@ function handleCardAddSubmit(formData) {
       cardSection.addItem(cardElement);
       profileAddPopup.close();
       profileAddForm.reset();
+      profileAddForm.reset();
+      addFormValidator.toggleButtonState();
     })
     .catch(console.error)
     .finally(() => profileAddPopup.setLoadingState(false));

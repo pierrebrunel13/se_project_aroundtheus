@@ -16,10 +16,5 @@ open( name, link) {
     super.open();
   }
 
-  // setEventListeners() {
-  //   super.setEventListeners();
-  //   this._popupElement.querySelector(".modal__close").addEventListener("click", () => {
-  //     this.close();
-  //   });
-  // }
+  
 }
