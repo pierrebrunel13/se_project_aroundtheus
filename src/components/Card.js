@@ -12,7 +12,6 @@ export default class Card {
     this._name = data.name;
     this._link = data.link;
     this._id = data._id;
-    this._likes = data.likes || [];
     this._ownerId = data.owner._id;
     this._currentUserId = currentUserId;
     this._cardSelector = cardSelector;
@@ -23,7 +22,7 @@ export default class Card {
 
   _setEventListeners() {
     this._cardElement.querySelector(".card__like-button").addEventListener("click", () => {
-      this._handleLikeIcon();
+      this._handleLikeClick();
     });
 
     this._cardElement.querySelector(".card__delete-button").addEventListener("click", () => {
@@ -40,12 +39,8 @@ export default class Card {
     this._cardElement = null;
   }
 
-  _handleLikeIcon() {
-    this._handleLikeClick().then(() => {
-      this._cardElement
-        .querySelector(".card__like-button")
-        .classList.toggle("card__like-button_active");
-    });
+  handleLikeIcon() {
+    this._likeButton.classList.toggle("card__like-button_active");
   }
 
   getId() {
@@ -58,6 +53,7 @@ export default class Card {
       .querySelector(this._cardSelector)
       .content.querySelector(".card")
       .cloneNode(true);
+    this._likeButton = this._cardElement.querySelector(".card__like-button");
 
     const cardImageEl = this._cardElement.querySelector(".card__image");
     const cardTitleEl = this._cardElement.querySelector(".card__title");
@@ -65,6 +61,9 @@ export default class Card {
     cardImageEl.src = this._link;
     cardImageEl.alt = this._name;
     cardTitleEl.textContent = this._name;
+    if(this._data.isLiked) {
+      this.handleLikeIcon()
+    }
 
     this._setEventListeners();
 

@@ -126,7 +126,10 @@ function createCard(cardData) {
     },
     handleLikeClick: (isLiked) => {
       console.log(13123123123);
-      return isLiked ? api.unlikeCard(cardData._id) : api.likeCard(cardData._id);
+      return isLiked ? api.unlikeCard(cardData._id) : api.likeCard(cardData._id)
+      .then (() => {
+        card.handleLikeIcon()
+      }) 
     },
     currentUserId,
   });
